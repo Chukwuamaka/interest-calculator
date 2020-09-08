@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest Calculator</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Interest Calculator</h2>
+        <form>
+            <label>
+                Interest Type: <br>
+                <select class="margin-top wider" name="interest-type" id="interest-type" required>
+                    <option disabled selected>Choose Interest Type</option>
+                    <option value="simple">Simple Interest</option>
+                    <option value="compound">Compound Interest</option>
+                </select>
+            </label><br>
+            <label>
+                Amount: <br>
+                <input class="margin-top wider" id="amount" type="number" placeholder="Amount" min="1" required>
+            </label><br>
+            <label>
+                Interest Rate: <br>
+                <input class="margin-top" id="rate" type="number" placeholder="Rate (without %). E.g. 5" min="0" required> per 
+                <select name="rate-basis" id="rate-basis" required>
+                    <option disabled selected>Rate Basis</option>
+                    <option value="month">Month</option>
+                    <option value="year">Year</option>
+                </select>
+            </label><br>
+            <label>
+                Duration: <br>
+                <input class="margin-top" id="duration" type="number" placeholder="Duration" min="1" required>
+                <select name="duration-basis" id="duration-basis" required>
+                    <option disabled selected>Duration Basis</option>
+                    <option value="month">Month</option>
+                    <option value="year">Year</option>
+                </select>
+            </label><br>
+
+            <button id="button" type="reset">Calculate Interest</button>
+        </form>
+
+        <div id="results">
+            Principal: <span id="principal">0</span>
+            Interest: <span id="interest">0</span>
+            Total Amount: <span id="totalAmount">0</span>
+        </div>
+    </div>
+
+    <script src="src/index.js" type="text/javascript"></script>
+</body>
+</html>
