@@ -1,6 +1,6 @@
 body {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -12,14 +12,14 @@ body {
 }
 
 .container {
-    flex-basis: 38%;
     background-color: rgb(74, 114, 190);
     border-radius: 15px;
-    padding: 6vh 0 7vh 18vh;
+    /* padding: 6vh 0 7vh 18vh; */
 }
 
 h2 {
     margin-bottom: 50px;
+    text-align: center;
 }
 
 label {
@@ -60,13 +60,9 @@ input:focus, select:focus {
 }
 
 #duration {
-    min-width: 14.2em;
-    margin-right: 50px;
-}
-
-#duration-basis {
-    min-width: 15.2em;
-    margin-bottom: 30px;
+    min-width: 26.5em;
+    margin-right: 15px;
+    margin-bottom: 20px;
 }
 
 #button {
@@ -86,4 +82,38 @@ input:focus, select:focus {
 
 #results span {
     margin-right: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 110%;
+    }
+
+    #rate {
+        margin-right: 9px;
+    }
+    
+    #rate-basis {
+        margin-left: 9px;
+    }
+    
+    #duration {
+        margin-right: 10px;
+    }
+
+    #results {
+        font-size: 125%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        padding: 6vh 5vw 7vh 5vw;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        padding: 6vh 12vw 7vh 11vw;
+    }
 }
