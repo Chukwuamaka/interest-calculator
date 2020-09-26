@@ -1,4 +1,4 @@
-import * as Interest from './interest.js';
+import * as Interest from './modules/interest.js';
 
 document.getElementById("button").addEventListener("click", () => {
     // Data from forms are collected as string, but some properties are of type 'number', hence the conversion in some cases.
@@ -11,13 +11,11 @@ document.getElementById("button").addEventListener("click", () => {
     
     switch (interestType) {
         case "compound":
-            interest = Interest.compound(principal, {rate, rateBasis}, duration); 
-            totalAmount = principal + interest;
+            ( {interest, totalAmount} = Interest.compound(principal, {rate, rateBasis}, duration) );
             break;
     
         default:
-            interest = Interest.simple(principal, {rate, rateBasis}, duration);
-            totalAmount = principal + interest;
+            ( {interest, totalAmount} = Interest.compound(principal, {rate, rateBasis}, duration) );
     }
 
     document.getElementById("principal").innerHTML = principal.toString();

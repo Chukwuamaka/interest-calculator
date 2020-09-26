@@ -1,4 +1,4 @@
-import * as Interest from './interest.js';
+import * as Interest from './modules/interest.js';
 document.getElementById("button").addEventListener("click", () => {
     let interestType = document.getElementById("interest-type").value;
     let principal = Number(document.getElementById("amount").value);
@@ -8,12 +8,10 @@ document.getElementById("button").addEventListener("click", () => {
     let interest, totalAmount;
     switch (interestType) {
         case "compound":
-            interest = Interest.compound(principal, { rate, rateBasis }, duration);
-            totalAmount = principal + interest;
+            ({ interest, totalAmount } = Interest.compound(principal, { rate, rateBasis }, duration));
             break;
         default:
-            interest = Interest.simple(principal, { rate, rateBasis }, duration);
-            totalAmount = principal + interest;
+            ({ interest, totalAmount } = Interest.compound(principal, { rate, rateBasis }, duration));
     }
     document.getElementById("principal").innerHTML = principal.toString();
     document.getElementById("interest").innerHTML = interest.toString();
