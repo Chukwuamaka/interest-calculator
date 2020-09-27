@@ -12,8 +12,9 @@
     "ignore": ["public/src"]
   },
   "scripts": {
-    "prestart": "tsc --project ./lib",
+    "build": "tsc --project ./lib",
     "start": "ts-node server.ts",
+    "postinstall": "npm run build",
     "watch": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
