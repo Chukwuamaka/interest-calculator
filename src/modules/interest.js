@@ -1,6 +1,9 @@
-export const simple = (principal, rate, time) => {
-    const formula = (principal * rate.rate * time) / 100;
-    let interest;
+"use strict";
+exports.__esModule = true;
+exports.compound = exports.simple = void 0;
+exports.simple = function (principal, rate, time) {
+    var formula = (principal * rate.rate * time) / 100;
+    var interest;
     if (rate.rate === 0) {
         interest = 0;
     }
@@ -14,14 +17,14 @@ export const simple = (principal, rate, time) => {
         }
     }
     return {
-        interest,
+        interest: interest,
         totalAmount: principal + interest
     };
 };
-export const compound = (principal, rate, time) => {
-    let exponent = time;
-    const formula = principal * Math.pow((1 + rate.rate / 100), exponent) - principal;
-    let interest;
+exports.compound = function (principal, rate, time) {
+    var exponent = time;
+    var formula = principal * Math.pow((1 + rate.rate / 100), exponent) - principal;
+    var interest;
     if (rate.rate === 0) {
         interest = 0;
     }
@@ -35,9 +38,9 @@ export const compound = (principal, rate, time) => {
                 interest = formula;
         }
     }
-    interest = Number(interest.toFixed(2));
+    interest = Number(interest.toFixed(2)); //toFixed() method returns a string but 'result' is of type 'number', hence the conversion.
     return {
-        interest,
+        interest: interest,
         totalAmount: principal + interest
     };
 };

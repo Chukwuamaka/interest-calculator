@@ -8,12 +8,13 @@
     "execMap": {
       "ts": "ts-node"
     },
-    "exec": "npm start",
-    "ignore": ["public/src"]
+    "exec": "npm run dev",
+    "ignore": ["public/dist"]
   },
   "scripts": {
-    "build": "tsc --project ./lib",
-    "start": "ts-node server.ts",
+    "build": "tsc",
+    "start": "node public/dist/server.js",
+    "dev": "npm run build && ts-node src/server.ts",
     "postinstall": "npm run build",
     "watch": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
