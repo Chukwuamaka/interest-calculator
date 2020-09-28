@@ -1,5 +1,5 @@
 import express from 'express';
-import * as Interest from './modules/interest';
+import * as Interest from './modules/interest.js';
 
 const server = express();
 const port: string | number = process.env.PORT || 3000;
