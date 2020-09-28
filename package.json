@@ -2,7 +2,7 @@
   "name": "interest-calculator",
   "version": "1.0.0",
   "description": "An interest calculator that performs both simple and compound interest calculations",
-  "main": "server.ts",
+  "main": "public/dist/server.js",
   "type": "module",
   "nodemonConfig": {
     "ext": "js,ts,json",
