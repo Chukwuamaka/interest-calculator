@@ -12,7 +12,7 @@ server.use(express.static('public'));
 server.use(express.json({limit: '1mb'}));
 
 const corsOptions = {
-    methods: "[GET, POST, PUT]",
+    methods: ['GET', 'POST', 'PUT'],
     optionsSuccessStatus: 200
 };
 
