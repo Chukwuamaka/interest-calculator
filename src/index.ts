@@ -8,6 +8,7 @@ document.getElementById("button").addEventListener("click", () => {
     let rateBasis: string = (document.getElementById("rate-basis") as HTMLSelectElement).value;
     let duration: number = Number((document.getElementById("duration") as HTMLInputElement).value);
     let interest: number, totalAmount: number;
+    // console.log(rateBasis);
     
     switch (interestType) {
         case "compound":

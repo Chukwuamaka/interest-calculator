@@ -17,12 +17,12 @@ export const simple = (principal: number, rate: Rate, time: number): Results => 
     }
     else {
         switch (rate.rateBasis) {
-            case 'month':
-                interest = formula;
-                break;
-            
             case 'year':
                 interest = formula / 12;
+                break;
+
+            default:
+                interest = formula;
         }
     }
     
@@ -42,12 +42,12 @@ export const compound = (principal: number, rate: Rate, time: number): Results =
     }
     else {
         switch (rate.rateBasis) {
-            case 'month':
+            case 'year':
+                exponent = time / 12;
                 interest = formula;
                 break;
 
-            case 'year':
-                exponent = time / 12;
+            default:
                 interest = formula;
         }
     }
