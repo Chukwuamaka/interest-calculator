@@ -17,7 +17,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node public/dist/server.js",
-    "dev": "npm run build && node public/dist/server.js",
+    "dev": "npm run build && npm start",
     "postinstall": "npm run build",
     "watch": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"

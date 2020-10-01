@@ -16,7 +16,7 @@ const corsOptions = {
     optionsSuccessStatus: 200
 };
 
-server.get('/simple', cors(corsOptions), (req, res) => {
+server.all('/simple', cors(corsOptions), (req, res) => {
     let principal: number = Number(req.query.amount) || 0;
     let rate: number = Number(req.query.rate) || 0;
     let rateBasis: string = req.query.basis === undefined ? '' : req.query.basis.toString();
@@ -25,7 +25,7 @@ server.get('/simple', cors(corsOptions), (req, res) => {
     res.json(response);
 });
 
-server.get('/compound', cors(corsOptions), (req, res) => {
+server.all('/compound', cors(corsOptions), (req, res) => {
     let principal: number = Number(req.query.amount) || 0;
     let rate: number = Number(req.query.rate) || 0;
     let rateBasis: string = req.query.basis === undefined ? '' : req.query.basis.toString();
